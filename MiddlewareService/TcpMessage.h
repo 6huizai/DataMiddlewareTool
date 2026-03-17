@@ -257,7 +257,7 @@ public:
         stream.setByteOrder(QDataStream::BigEndian);
         stream << timestamp;
         stream << frame;
-        stream << points.size();
+        stream << static_cast<quint32> (points.size());
         for (int i=0; i<points.size(); i++)
         {
             Point p = points[i];
@@ -306,7 +306,7 @@ public:
         stream << scanBoundaryA;
         stream << scanBoundaryB;
         stream << scanningDirection;
-        stream << points.size();
+        stream << static_cast<quint32> (points.size());
         for (int i=0; i<points.size(); i++)
         {
             Point p = points[i];
@@ -360,7 +360,7 @@ public:
         stream.setByteOrder(QDataStream::BigEndian);
         stream << timestamp;
         stream << frame;
-        stream << points.size();
+        stream << static_cast<quint32> (points.size());
         for (int i=0; i<points.size(); i++)
         {
             Point p = points[i];
