@@ -69,7 +69,7 @@ public:
 class HeartbeatMessage
 {
 public:
-    int64_t timestamp;
+    qint64 timestamp;
 
     void parseBody(QByteArray& data)
     {
@@ -246,7 +246,7 @@ public:
         uint16_t pluse;  ///< 脉冲索引，指示点迹所在的脉冲
     };
 public:
-    int64_t timestamp;
+    qint64 timestamp;
     uint32_t frame;
     std::vector<Point> points;
 
@@ -288,8 +288,8 @@ public:
         int32_t dump0;
     };
 public:
-    int64_t timestamp;
-    int64_t frame;
+    qint64 timestamp;
+    qint64 frame;
     int32_t scanBoundaryA; ///< 扫描左边界，分辨率：0.0001度
     int32_t scanBoundaryB; ///< 扫描右边界，分辨率：0.0001度
     int32_t scanningDirection; ///< 扫描方向，0: 顺时针扫描, 2: 逆时针扫描
@@ -349,7 +349,7 @@ public:
         int64_t endTimestamp;
     };
 public:
-    int64_t timestamp;
+    qint64 timestamp;
     uint32_t frame;
     std::vector<Point> points;
 
@@ -415,7 +415,7 @@ public:
         int8_t object;  ///< 目标类型
         int8_t pluse;
         // 预测值
-        int64_t timestamp; ///<航迹更新时间戳，单位：ms，用于计算预测值
+        qint64 timestamp; ///<航迹更新时间戳，单位：ms，用于计算预测值
         int32_t dump0; ///< 预留 不需要解析
         int32_t dump1; ///< 预留 不需要解析
         int32_t dump2; ///< 预留 不需要解析
@@ -423,12 +423,12 @@ public:
 
         // 非协议字段
         int32_t duration;        // 持续时间
-        int64_t createTimestamp; // 创建时间
+        qint64 createTimestamp; // 创建时间
     };
 public:
-    int64_t timestamp;
-    int64_t frame;
-    int64_t frameTimestamp; ///< 当前帧时间戳，单位ms，用于计算预测值
+    qint64 timestamp;
+    qint64 frame;
+    qint64 frameTimestamp; ///< 当前帧时间戳，单位ms，用于计算预测值
     int32_t scanBoundaryA; ///< 扫描左边界，分辨率：0.0001度
     int32_t scanBoundaryB; ///< 扫描右边界，分辨率：0.0001度
     int8_t reserve;
@@ -515,9 +515,9 @@ public:
 class UploadRtkMessage
 {
 public:
-    int64_t lat;  // 纬度，1e-9度
-    int64_t lon;  // 经度，1e-9度
-    int64_t heading;  // 行向角，1e-9度
+    qint64 lat;  // 纬度，1e-9度
+    qint64 lon;  // 经度，1e-9度
+    qint64 heading;  // 行向角，1e-9度
     int32_t stars;  // 可用卫星数量
     int32_t alt;  // 高程
 

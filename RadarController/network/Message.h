@@ -130,7 +130,7 @@ protected:
 class HeartbeatMessage : public Message
 {
 public:
-    int64_t timestamp;
+    qint64 timestamp;
 protected:
     bool parseBody(QByteArray& array) override;
     virtual void dumpBody(QDataStream& stream) override;
@@ -265,7 +265,7 @@ class UploadSampleDataMessage : public Message
 {
 public:
     typedef struct {
-        int64_t timestamp;
+        qint64 timestamp;
         uint32_t frameNumber;
         uint16_t kindA;  // 原始数据类型，ADC、脉压等
         uint16_t kindB;  // 传输数据类型，Beam、CPI等
