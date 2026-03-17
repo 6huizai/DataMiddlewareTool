@@ -42,7 +42,7 @@ public:
         uint16_t pluse;  ///< 脉冲索引，指示点迹所在的脉冲
     };
 public:
-    int64_t timestamp;
+    qint64 timestamp;
     uint32_t frame;
     std::vector<Point> points;
 
@@ -65,8 +65,8 @@ public:
         int32_t dump0;
     };
 public:
-    int64_t timestamp;
-    int64_t frame;
+    qint64 timestamp;
+    qint64 frame;
     int32_t scanBoundaryA; ///< 扫描左边界，分辨率：0.0001度
     int32_t scanBoundaryB; ///< 扫描右边界，分辨率：0.0001度
     int16_t reserve;
@@ -94,7 +94,7 @@ public:
         int16_t dopplerWidth;
     };
 public:
-    int64_t timestamp;
+    qint64 timestamp;
     uint32_t frame;
     std::vector<Point> points;
 
@@ -125,7 +125,7 @@ public:
         int32_t privSpeedDirection; ///< 预测速度方向，分辨率：0.0001度
     };
 public:
-    int64_t timestamp;
+    qint64 timestamp;
     uint32_t frame;
     std::vector<Point> points;
 
@@ -163,16 +163,16 @@ public:
         int8_t object;  ///< 目标类型
         int8_t pluse;
         // 预测值
-        int64_t timestamp; ///<航迹更新时间戳，单位：ms，用于计算预测值
+        qint64 timestamp; ///<航迹更新时间戳，单位：ms，用于计算预测值
         int32_t dump0; ///< 预留 不需要解析
         int32_t dump1; ///< 预留 不需要解析
         int32_t rcs6; ///< 雷达散射截面积，分辨率0.000001㎡
         int32_t selected; ///< 选中标志
     };
 public:
-    int64_t timestamp;
-    int64_t frame;
-    int64_t frameTimestamp; ///< 当前帧时间戳，单位ms，用于计算预测值
+    qint64 timestamp;
+    qint64 frame;
+    qint64 frameTimestamp; ///< 当前帧时间戳，单位ms，用于计算预测值
     int32_t scanBoundaryA; ///< 扫描左边界，分辨率：0.0001度
     int32_t scanBoundaryB; ///< 扫描右边界，分辨率：0.0001度
     int16_t reserve;
@@ -200,7 +200,7 @@ public:
         int16_t level;
     };
 public:
-    int64_t timestamp;
+    qint64 timestamp;
     uint32_t frame;
     std::vector<Grid> grids;
 
@@ -224,8 +224,8 @@ public:
         int16_t beam;			// 俯仰波位，显示在地图杂波区内，用于标识不同的俯仰角
     };
 public:
-    int64_t timestamp;
-    int64_t frame;
+    qint64 timestamp;
+    qint64 frame;
     int32_t scanningBoundaryA; ///< 扫描左边界，分辨率：0.0001度
     int32_t scanningBoundaryB; ///< 扫描右边界，分辨率：0.0001度
     std::vector<Grid> grids;
@@ -256,9 +256,9 @@ typedef Acknowledge RequestRtkAcknowledge;
 class UploadRtkMessage : public Message
 {
 public:
-    int64_t lat;  // 纬度，1e-9度
-    int64_t lon;  // 经度，1e-9度
-    int64_t heading;  // 行向角，1e-9度
+    qint64 lat;  // 纬度，1e-9度
+    qint64 lon;  // 经度，1e-9度
+    qint64 heading;  // 行向角，1e-9度
     int32_t stars;  // 可用卫星数量
     int32_t alt;  // 高程
 

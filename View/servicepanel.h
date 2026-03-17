@@ -5,8 +5,8 @@
 #include <QFileDialog>
 #include <QString>
 #include <QDateTime>
-#include <Cmath>
-#include <Qtimer>
+#include <cmath>
+#include <QTimer>
 #include "TcpServer.h"
 #include <QUdpSocket>
 #include "prjmessage.h"
