@@ -10,8 +10,8 @@
 #include <cstring>
 #include <cstdint>
 #include <vector>
-#include <Qtime>
-#include <Qtimer>
+#include <QTime>
+#include <QTimer>
 
 #include "prjmessage.h"
 
